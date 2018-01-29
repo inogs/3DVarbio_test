@@ -1,0 +1,67 @@
+ ------------------------------------------------------------
+   
+                       NAMELISTS: 
+   
+ ------------------------------------------------------------
+ ------------------------------------------------------------
+  MINIMIZER NAMELIST INPUT: 
+  Number of saved vectors:         ctl_m    =            0
+  Minimum gradient of J:           ctl_tol  =   9.999999999999999E-012
+  Percentage of initial gradient:  ctl_per  =   1.000000000000000E-003
+ ------------------------------------------------------------
+ ------------------------------------------------------------
+  COVARIANCE NAMELIST INPUT: 
+  Number of EOFs:                  neof     =            4
+  Number of regions:               nreg     =        63045
+  Read EOFs from a file:           read_eof =  T
+  Half number of iterations:       rcf_ntr  =            4
+  Horizontal correlation radius:   rcf_L    =    10000.0000000000     
+  Extension factor for coastlines: rcf_efc  =    5.00000000000000     
+ ------------------------------------------------------------
+ ------------------------------------------------------------
+  BIOLOGY NAMELIST INPUT: 
+  Biological repartition of the chlorophyll =            0
+  Number of phytoplankton species  nphyt    =            4
+  Minimum depth for chlorophyll    chl_dep  =    200.000000000000     
+  Number of phytoplankton components  ncmp  =            5
+  Apply conditions flag     ApplyConditions =  T
+ ------------------------------------------------------------
+ ------------------------------------------------------------
+  PARAMETERS NAMELIST INPUT: 
+  Read Satellite observations      sat_obs  =            1
+  Read ARGO float observations     argo     =            0
+  Set uniform correlation radius   uniformL =            0
+  Set anisotropy on corr radius    anisL    =            0
+  Add verbose on standard output   verbose  =            1
+ ------------------------------------------------------------
+ ------------------------------------------------------------
+ 
+ Grid dimensions are:          722         253          26
+  
+ Dom_size
+  
+  number of processors following i : NumProcI   =           20
+  number of processors following j : NumProcJ   =            1
+  
+ out of def_grd 
+ out of get_obs
+ Number of CHL observations:  >>>>>>>>>>>>>       39813
+ out of int_par
+  Total number of observations:            0
+ out of obs_vec
+ Eof dimensions are:        63045          26                     4
+ Uses            4  eofs.
+ out of def_cov 
+ size of the control vector:       252180
+ out of ini_cfn
+ 
+ Within tao_minimizer subroutine!
+ Setting MyTolerance  6.349967645602801E-002
+ Minimization done with           59
+ iterations
+ 
+ out of tao_minimizer
+ minimization executed in   7.22707509994507      sec
+ time/iteration =   0.122492798304154      sec
+ writes to corrections.dat !!!!!!!!!!!!!!!!!!!!!!!!!
+ out of sav_itr 

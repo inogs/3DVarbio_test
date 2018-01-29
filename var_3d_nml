@@ -1,0 +1,112 @@
+  !---------------------------------------------------------------------------
+  !                                                                          !
+  !    Copyright 2018 Anna Teruzzi, OGS, Trieste                         !
+  !                                                                          !
+  !    This file is part of 3DVarBio.
+  !                                            !
+  !                                                                          !
+  !    3DVarBio is  free software: you can redistribute it and/or modify.     !
+  !    it under the terms of the GNU General Public License as published by  !
+  !    the Free Software Foundation, either version 3 of the License, or     !
+  !    (at your option) any later version.                                   !
+  !                                                                          !
+  !    3DVarBio is  distributed in the hope that it will be useful,           !
+  !    but WITHOUT ANY WARRANTY; without even the implied warranty of        !
+  !    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the         !
+  !    GNU General Public License for more details.                          !
+  !                                                                          !
+  !    You should have received a copy of the GNU General Public License     !
+  !    along with OceanVar.  If not, see <http://www.gnu.org/licenses/>.       !
+  !                                                                          !
+  !---------------------------------------------------------------------------
+
+!------------------------------------------------------------
+! 3DvarBio namelist
+!------------------------------------------------------------
+!------------------------------------------------------------
+!
+! Namelist ctllst
+! ---
+!
+!             BFGS minimizers set-up
+!
+!  ctl_tol -  Stopping criteria (absolute)
+!  ctl_per -  Stopping criteria (relative)
+!
+! ---
+&ctllst
+   ctl_tol  = 1.e-11
+   ctl_per  = 1.e-3
+/
+!------------------------------------------------------------
+!
+! Namelist rcflst
+! ---
+!
+!             Covariance constants
+!
+!  neof     - Number of vertical EOFs 
+!  nreg     -  Number of regions
+!  read_eof - Logical to read EOFs from files.
+!             See subroutine def_cov.f90       
+!  rcf_ntr -  Number of iterations of the recursive filter
+!  rcf_L   -  Horizontal correlation radius
+!  rcf_efc -  Extension factor for coasts
+!
+! ---
+&covlst
+   neof     = 4
+   nreg     = 63045
+   read_eof = .true. 
+   rcf_ntr  = 4
+   rcf_L    = 10000.
+   rcf_efc  = 5.0
+/
+!------------------------------------------------------------
+!
+! Namelist biolst
+! ---
+!
+!          Biological assimilation set-up
+!
+!  bio_assim -  1-updates for biological variables, 
+!               0-updates for total chlorophyll
+!  nchl      -  Number of phytoplankton species
+!  chl_dep   -  Minimum depth for chlorophyll assimilation
+!  ncmp      -  Number pf components of phytoplankton
+! ApplyConditions - Apply conditions for concistency of biogeochemical variables
+!
+! ---
+&biolst
+ bio_assim = 0
+   nphyto  = 4
+   chl_dep = 200.0
+   ncmp    = 5
+ApplyConditions = .true.
+/
+!------------------------------------------------------------
+!
+! Namelist parameters
+! ---
+!
+!          Parameters namelist
+!
+!  sat     - 1-assimilate satellite data
+!            0-no satellite assimilation
+!  argo    - 1-assimilate argo data
+!          - 0-no argo assimilation
+! uniformL - 1-non uniform radius
+!          - 0-uniform radius (rcf%L)
+! anisL    - 1-anisotropy
+!            0-isotropy
+! verbose  - 1-set verbose output
+!
+! ---
+&params
+ sat_obs  = 1
+  argo    = 0
+ uniformL = 0
+  anisL   = 0
+ verbose  = 1
+/
+!------------------------------------------------------------
